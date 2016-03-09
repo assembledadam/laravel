@@ -156,6 +156,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Dingo\Api\Provider\LaravelServiceProvider::class,
     ],
 
     /*
@@ -202,6 +203,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'API'       => 'Dingo\Api\Facade\API',
+        'APIRoute'  => 'Dingo\Api\Facade\Route',
     ],
 
 ];

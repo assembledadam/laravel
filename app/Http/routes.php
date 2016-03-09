@@ -11,21 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+$api = app('Dingo\Api\Routing\Router');
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
+$api->version('v1', function ($api) {
 
-Route::group(['middleware' => ['web']], function () {
-    //
+    APIRoute::get('test/{permalink}', 'App\\Http\\Controllers\\TestController@get');
+    APIRoute::put('test/{permalink}', 'App\\Http\\Controllers\\TestController@update');
 });
