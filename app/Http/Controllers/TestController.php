@@ -8,13 +8,13 @@ namespace App\Http\Controllers;
 
 class TestController extends Controller
 {
-    public function get()
+    public function __construct()
     {
-        dd('getting something');
+        parent::__construct();
     }
 
-    public function update()
+    public function get()
     {
-        dd('updating something');
+        dbg('TestController::get() called');
     }
 }

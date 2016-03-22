@@ -41,6 +41,14 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+// Create version of dd() that doesn't die
+function dbg()
+{
+    array_map(function ($x) {
+        (new Illuminate\Support\Debug\Dumper)->dump($x);
+    }, func_get_args());
+}
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

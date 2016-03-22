@@ -16,5 +16,4 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
 
     APIRoute::get('test/{permalink}', 'App\\Http\\Controllers\\TestController@get');
-    APIRoute::put('test/{permalink}', 'App\\Http\\Controllers\\TestController@update');
 });
