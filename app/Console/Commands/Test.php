@@ -27,22 +27,8 @@ class Test extends Command
      */
     public function handle()
     {
-        try {
-            \API::get('non-existant-route');
+        $dispatcher = app('Dingo\Api\Dispatcher');
 
-        } catch (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e) {
-
-            \API::get('test/this-is-a-valid-route');
-
-            /*
-              Produces:
-
-              [Symfony\Component\Debug\Exception\FatalErrorException]
-                Call to a member function getUri() on null
-             */
-
-            // the below (alternatively) also fails
-            // print \APIRoute::current();
-        }
+        $dispatcher->get('test/this-is-a-valid-route');
     }
 }

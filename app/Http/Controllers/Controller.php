@@ -13,6 +13,6 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        dbg('Controller::__construct() called');
+
     }
 }

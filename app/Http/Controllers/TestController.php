@@ -15,6 +15,6 @@ class TestController extends Controller
 
     public function get()
     {
-        dbg('TestController::get() called');
+        echo "Hello! You are calling the get() controller method.";
     }
 }
